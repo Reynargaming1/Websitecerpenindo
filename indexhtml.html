@@ -1,0 +1,156 @@
+!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joki Akun Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        main {
+            padding: 20px;
+        }
+        section {
+            margin: 20px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .feature {
+            border: 1px solid #4CAF50;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #4CAF50;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Joki Akun Game</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showSection('features')">Fitur</a></li>
+                <li><a href="#" onclick="showSection('about')">Tentang Kami</a></li>
+                <li><a href="#" onclick="showSection('contact')">Kontak</a></li>
+                <li><a href="#" onclick="showSection('moba')">Game MOBA</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="features">
+            <h2>Fitur Kami</h2>
+            <div class="feature">
+                <h3>Aman dan Terpercaya</h3>
+                <p>Jaminan keamanan akun Anda selama menggunakan jasa kami.</p>
+            </div>
+            <div class="feature">
+                <h3>Harga Bersaing</h3>
+                <p>Kami menawarkan harga yang kompetitif untuk setiap layanan.</p>
+            </div>
+            <div class="feature">
+                <h3>Layanan 24/7</h3>
+                <p>Dapatkan dukungan kapan saja Anda membutuhkannya.</p>
+            </div>
+        </section>
+
+        <section id="about" style="display: none;">
+            <h2>Tentang Kami</h2>
+            <p>Kami adalah penyedia layanan joki akun game yang siap membantu Anda mencapai level yang diinginkan dengan aman dan cepat.</p>
+        </section>
+
+        <section id="contact" style="display: none;">
+            <h2>Kontak Kami</h2>
+            <form id="contactForm">
+                <label for="name">Nama:</label>
+                <input type="text" id="name" name="jokigame" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="jokigame@gmail.com" required>
+                <label for="message">Pesan:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Kirim</button>
+            </form>
+        </section>
+
+        <section id="moba" style="display: none;">
+            <h2>Game MOBA</h2>
+            <p>Temukan layanan joki untuk game-game MOBA populer seperti Mobile Legends, Dota 2, dan lainnya.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Joki Akun Game. Semua hak dilindungi.</p>
+    </footer>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Mencegah pengiriman form default
+            alert("Pesan telah terkirim! Terima kasih telah menghubungi kami.");
+            this.reset(); // Reset form setelah pengiriman
+        });
+
+        function showSection(sectionId) {
+            // Sembunyikan semua section
+            const sections = document.querySelectorAll('main section');
+            sections.forEach(section => section.style.display = 'none');
+
+            // Tampilkan section yang dipilih
+            document.getElementById(sectionId).style.display = 'block';
+        }
+
+        // Tampilkan fitur sebagai default
+        showSection('features');
+    </script>
+</body>
+</html>
